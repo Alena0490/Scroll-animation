@@ -18,7 +18,7 @@
     --text-h1: 2.986rem;
     --text-h2: 2.488rem;
     --text-h3: 2.074rem;
-    --text-menu:  2.074rem;
+    --text-menu:  1.5rem;
     --text-menu-small: 1.2rem;
     --text-p: 1rem;
     --text-small: 0.833rem;
@@ -34,29 +34,48 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text-color);
-    background: linear-gradient(
-        to bottom, 
-        var(--background-color), 
-        var(--background-dark)
-    );
+}
+
+nav,
+main,
+footer {
+    max-width: 950px;
+    margin-inline: auto;
 }
 
 header {
     width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+nav,
+footer {
+    background-color: var(--accent-dark-transparent);
+    backdrop-filter: blur(5px);
 }
 
 nav {
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
     display: flex;
     justify-content: space-between;
-    padding-block: 0.5rem 0.25rem;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-inline: auto;
+    padding: 1rem 2rem 0.5rem;
+}
+
+#logo {
+    max-width: 100%;
+    flex: 1;
 }
 
 .nav-links {
+    flex: 2;
     display: flex;
+    justify-content: space-between;
     gap: 0.5rem;
     padding: 0.25rem 1rem;
     list-style: none;
@@ -66,7 +85,7 @@ nav {
     text-decoration: none;
     color: inherit;
     text-transform: uppercase;
-    font-style: var(--text-menu);
+    font-size: var(--text-menu);
 }
 
 #hero {
@@ -152,6 +171,15 @@ h3 {
     font-size: var(--text-h3);
 }
 
+main {
+        background: linear-gradient(
+        to bottom, 
+        var(--background-color), 
+        var(--background-dark)
+    );
+    padding-top: 1rem;
+}
+
 section {
     padding: 1rem 2rem;
 }
@@ -162,8 +190,9 @@ section p {
 
 .my-projects {
     display: grid;
-    grid-template: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 0.5rem;
+    padding-block: 1rem;
 }
 
 .my-projects li {
@@ -216,6 +245,7 @@ form textarea:focus {
 }
 
 .submit {
+    width: 100%;
     padding: 0.5rem 1rem;
     background-color: var(--main-color);
     color: var(--text-color);
@@ -257,8 +287,20 @@ footer {
     color: var(--text-color);
 }
 
-@media (max-width: 1200px){
+@media (max-width: 950px){
     .my-projects {
-        grid-template: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 648px){
+    .my-projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 485px){
+    .my-projects {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
