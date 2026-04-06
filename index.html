@@ -4,144 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rajdhani:wght@300;400;500;600;700&family=Smythe&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
             <img src="img/logo.webp" alt="logo" id="logo">
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#" id="scroll">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about" id="scroll">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contacts">Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section id="hero">
-            <h1>Welcome</h1>
-            <div class="cta-buttons">
-                </a>
-                <button class="primary">Contact me</button>
-                <button class="secondary">Projects</button>
+            <div class="hero-content">
+                <h1>Welcome</h1>
+                <p>Enjoy the Steampunk world.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="primary">Moje projekty</a>
+                    <a href="#contact" class="secondary">Kontakt</a>
+                </div>
             </div>
-            <a href="#scroll" class="arrow-down">
+            <a href="#about" class="arrow-down">
                 <svg  width="16" height="16" fill="currentColor" class="chevron-down" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
                 </svg>
             </a>
         </section>
+
         <section id="about">
-            <h2>About me</h2>
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, quod. Tempora officia rerum nemo. Adipisci dolorum eos reprehenderit nobis, necessitatibus fugit aliquid voluptatum, consectetur ex quia error similique culpa! Necessitatibus.
-                
+            <div class="animate">
+                <img class="animated-img" src="img/gear.webp" alt="copper gear">
+            </div>
+            <h2 class="auto-show">About me</h2>
+            <p class="auto-show auto-blurr">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, quod. Tempora officia rerum nemo. Adipisci dolorum eos reprehenderit nobis, necessitatibus fugit aliquid voluptatum, consectetur ex quia error similique culpa! Necessitatibus.      
             </p>
         </section>
         <section id="projects">
-            <h2>My projects</h2>
-            <ul class="my-projects">
-                <li>
-                    <h3>Project view</h3>
-                     <a href="">
-                        <img src="img/6230861.jpg" alt="project mockup">
-                     </a>
-                     <p class="description"></p>
-                </li>
-                <li>
-                    <h3>Project view</h3>
-                     <a href="">
-                        <img src="img/6230861.jpg" alt="project mockup">
-                     </a>
-                     <p class="description"></p>
-        
-                </li>
-                <li>
-                    <h3>Project view</h3>
-                    <a href="">
-                        <img src="img/6230861.jpg" alt="project mockup">
+            <h2 class="auto-show">My projects</h2>
+            <ul class="my-projects auto-show">
+                <li class="auto-blurr"">
+                    <a href="#">
+                        <img src="img/6230861.jpg" alt="Náhled projektu ..." />
+                        <h3>Název projektu</h3>
                     </a>
-                    <p class="description"></p>
-                </li>
-                <li>
-                    <h3>Project view</h3>
-                    <a href="">
-                        <img src="img/6230861.jpg" alt="project mockup">
-                    </a>
-                    <p class="description"></p>
                 </li>
 
-                <li>
-                    <h3>Project view</h3>
-                    <a href="">
-                        <img src="img/6230861.jpg" alt="project mockup">
+               <li class="auto-blurr">
+                    <a href="#">
+                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
+                        <h3>Název projektu</h3>
                     </a>
-                    <p class="description"></p>
                 </li>
 
-                <li>
-                    <h3>Project view</h3>
-                    <a href="">
-                        <img src="img/6230861.jpg" alt="project mockup">
+                <li class="auto-blurr">
+                    <a href="#">
+                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
+                        <h3>Název projektu</h3>
                     </a>
-                    <p class="description"></p>
-                <li>
-                    <h3>
-                        Project view
-                    </h3>
-                    <a href="">
-                        <img src="img/6230861.jpg" alt="project mockup">
-                    </a>
-                    <p class="description"></p>
                 </li>
-                <li>
-                    <h3>Project view</h3>
-                    <a href="">
-                        <img src="img/6230861.jpg" alt="project mockup">
+
+                <li class="auto-blurr">
+                    <a href="#">
+                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
+                        <h3>Název projektu</h3>
                     </a>
-                    <p class="description"></p>
                 </li>
-                <li>
-                    <h3>Project view</h3>
-                    <a href="">
-                        <img src="img/6230861.jpg" alt="project mockup">
+
+               <li class="auto-blurr">
+                    <a href="#">
+                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
+                        <h3>Název projektu</h3>
                     </a>
-                    <p class="description"></p>
                 </li>
-                <li>
-                    <h3>Project view</h3>
-                    <a href="">
-                        <img src="img/6230861.jpg" alt="project mockup">
+
+                <li class="auto-blurr">
+                    <a href="#">
+                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
+                        <h3>Název projektu</h3>
                     </a>
-                    <p class="description"></p>
                 </li>
-                <li>
-                    <h3>Project view</h3>
-                    <a href="">
-                        <img src="img/6230861.jpg" alt="project mockup">
+
+                <li class="auto-blurr">
+                    <a href="#">
+                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
+                        <h3>Název projektu</h3>
                     </a>
-                    <p class="description"></p>
                 </li>
-                <li>
-                    <h3>Project view</h3>
-                    <a href="">
-                        <img src="img/6230861.jpg" alt="project mockup">
+
+                <li class="auto-blurr">
+                    <a href="#">
+                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
+                        <h3>Název projektu</h3>
                     </a>
-                    <p class="description"></p>
+                </li>
+
+                <li class="auto-blurr">
+                    <a href="#">
+                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
+                        <h3>Název projektu</h3>
+                    </a>
+                </li>
+
+                <li class="auto-blurr">
+                    <a href="#">
+                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
+                        <h3>Název projektu</h3>
+                    </a>
+                </li>
+
+                <li class="auto-blurr">
+                    <a href="#">
+                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
+                        <h3>Název projektu</h3>
+                    </a>
+                </li>
+                
+                <li class="auto-blurr">
+                    <a href="#">
+                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
+                        <h3>Název projektu</h3>
+                    </a>
                 </li>
             </ul>
         </section>
         <section id="contacts">
-            <h2>Contact me</h2>
-            <form action="" class="contact-form">
-                <label for="name">Name</label>
-                <input type="text" id="name">
-                <label for="email">E-mail</label>
-                <input type="email" id="email">
-                <label for="message">Message</label>
-                <textarea name="" id="message"></textarea>
-                <button class="submit">Submit</button>
+            <h2 class="auto-show">Contact me</h2>
+            <form class="auto-show">
+                <div class="form-group">
+                    <label for="name">Jméno</label>
+                    <input id="name" type="text" name="name" />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" name="email" />
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Zpráva</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+
+                <button class="submit" type="submit">Odeslat</button>
             </form>
         </section>
     </main>
@@ -177,6 +189,6 @@
             <p>Copyright Alena Pumprová 2026</p>
         </div>
     </footer>
-    
+    <script src="script.js"></script>
 </body>
 </html>
