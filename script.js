@@ -1,21 +1,25 @@
-/*** NAVIGATIN - ACTIVE STATE */
-const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
+/** NAVIGATION - ACTIVE STATE (IntersectionObserver) */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
 
-    window.addEventListener('scroll', () => {
-        let current = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            if (window.scrollY >= sectionTop) {
-                current = section.getAttribute('id');
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.toggle(
+                        'active',
+                        link.getAttribute('href') === `#${id}`
+                    );
+                });
             }
         });
+    },
+    {
+        rootMargin: '-40% 0px -55% 0px',
+        threshold: 0
+    }
+);
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
+sections.forEach(section => observer.observe(section));

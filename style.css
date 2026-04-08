@@ -214,7 +214,7 @@ nav {
     max-width: 42rem;
     margin-bottom: 2rem;
     font-size: var(--text-h3);
-    text-overflow: var(--shadow-sm);
+    text-shadow: var(--shadow-sm);
 }
 
 .cta-buttons {
@@ -237,7 +237,7 @@ nav {
     font-size: var(--text-menu);
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: .2;
+    letter-spacing: 0.05em;
     cursor: pointer;
     box-shadow: var(--shadow-sm);
     transition:
@@ -342,16 +342,6 @@ main {
         var(--background-color),
         var(--background-dark)
     );
-}
-
-.auto-show {
-    animation: AutoShowAnimation both;
-    animation-timeline: view(70% 5%);
-}
-
-.auto-blurr {
-   animation: AutoBulurrAnimation both; 
-   animation-timeline: view();
 }
 
 section {
@@ -571,7 +561,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .socials a {
@@ -594,6 +584,18 @@ footer {
 @media (max-width: 950px){
     .my-projects {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@supports (animation-timeline: view()) {
+    .auto-show {
+        animation: AutoShowAnimation both;
+        animation-timeline: view(70% 5%);
+    }
+
+    .auto-blurr {
+        animation: AutoBulurrAnimation both;
+        animation-timeline: view();
     }
 }
 
@@ -621,7 +623,7 @@ footer {
 @keyframes AutoShowAnimation {
     from {
         opacity: 0;
-        transform: translateY(50px) scale(0.6);
+        transform: translateY(50px) scale(0.7);
     }
 
     to {

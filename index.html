@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav label="Main navigation">
             <img src="img/logo.webp" alt="logo" id="logo">
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
@@ -24,136 +24,158 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h1>Welcome</h1>
-                <p>Enjoy the Steampunk world.</p>
+                <h1>The Gears Never Stop</h1>
+                <p>Welcome to my workshop. Mind the steam. And the gears. And whatever that thing in the corner is doing.</p>
                 <div class="cta-buttons">
-                    <a href="#projects" class="primary">Moje projekty</a>
-                    <a href="#contact" class="secondary">Kontakt</a>
+                    <a href="#projects" class="primary">My Inventory</a>
+                    <a href="#contact" class="secondary">Write me</a>
                 </div>
             </div>
-            <a href="#about" class="arrow-down">
-                <svg  width="16" height="16" fill="currentColor" class="chevron-down" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+            <a 
+                href="#about" 
+                class="arrow-down"
+                aria-label="Go to the Main Section"
+            >
+                <svg  
+                    width="16" 
+                    height="16" 
+                    fill="currentColor" 
+                    class="chevron-down" 
+                    viewBox="0 0 16 16"
+                >
+                <path 
+                fill-rule="evenodd" 
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
                 </svg>
             </a>
         </section>
 
         <section id="about">
             <div class="animate">
-                <img class="animated-img" src="img/gear.webp" alt="copper gear">
+                <img 
+                    class="animated-img" 
+                    src="img/gear.webp" 
+                    alt="copper gear"
+                >
             </div>
             <h2 class="auto-show">About me</h2>
             <p class="auto-show auto-blurr">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, quod. Tempora officia rerum nemo. Adipisci dolorum eos reprehenderit nobis, necessitatibus fugit aliquid voluptatum, consectetur ex quia error similique culpa! Necessitatibus.      
+                They called me mad. They were not entirely wrong. 
+                I have been working on something. I am always working on something. 
+                It is almost ready. It has been almost ready for thirty years.
+                The machines and I have an understanding.
+                I prefer not to discuss the basement.   
             </p>
         </section>
         <section id="projects">
-            <h2 class="auto-show">My projects</h2>
+            <h2 class="auto-show">My Inventions</h2>
             <ul class="my-projects auto-show">
-                <li class="auto-blurr"">
-                    <a href="#">
-                        <img src="img/6230861.jpg" alt="Náhled projektu ..." />
-                        <h3>Název projektu</h3>
-                    </a>
-                </li>
 
-               <li class="auto-blurr">
-                    <a href="#">
-                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
-                        <h3>Název projektu</h3>
+                <li class="auto-blurr">
+                    <a href="img/heart-big.webp">
+                        <img src="img/heart.webp" alt="A mechanical heart with brass pipes and valves" loading="lazy"/>
+                        <h3>The Mechanical Heart</h3>
                     </a>
                 </li>
 
                 <li class="auto-blurr">
-                    <a href="#">
-                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
-                        <h3>Název projektu</h3>
+                    <a href="img/cat-hat-big.webp">
+                        <img src="img/cat-hat.webp" alt="A steampunk cat wearing a top hat with brass goggles" loading="lazy"/>
+                        <h3>The Clockwork Companion</h3>
                     </a>
                 </li>
 
                 <li class="auto-blurr">
-                    <a href="#">
-                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
-                        <h3>Název projektu</h3>
-                    </a>
-                </li>
-
-               <li class="auto-blurr">
-                    <a href="#">
-                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
-                        <h3>Název projektu</h3>
+                    <a href="img/weather-machine-big.webp">
+                        <img src="img/weather-machine.webp" alt="A pink steampunk weather machine with gears and pipes" loading="lazy"/>
+                        <h3>The Atmospheric Regulator</h3>
                     </a>
                 </li>
 
                 <li class="auto-blurr">
-                    <a href="#">
-                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
-                        <h3>Název projektu</h3>
+                    <a href="img/teapot-big.webp">
+                        <img src="img/teapot.webp" alt="A pink steampunk tea kettle with brass fittings" loading="lazy"/>
+                        <h3>The Perpetual Teapot</h3>
                     </a>
                 </li>
 
                 <li class="auto-blurr">
-                    <a href="#">
-                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
-                        <h3>Název projektu</h3>
+                    <a href="img/house-big.webp">
+                        <img src="img/house.webp" alt="A pink steampunk workshop building with pipes and towers" loading="lazy"/>
+                        <h3>The Workshop</h3>
                     </a>
                 </li>
 
                 <li class="auto-blurr">
-                    <a href="#">
-                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
-                        <h3>Název projektu</h3>
+                    <a href="img/camera.webp">
+                        <img src="img/camera.webp" alt="A vintage watercolor camera with brass details" loading="lazy"/>
+                        <h3>The Memory Extractor</h3>
                     </a>
                 </li>
 
                 <li class="auto-blurr">
-                    <a href="#">
-                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
-                        <h3>Název projektu</h3>
+                    <a href="img/skull-big.webp">
+                        <img src="img/skull.webp" alt="A steampunk skull with gears and brass mechanisms" loading="lazy"/>
+                        <h3>The Immortality Prototype</h3>
                     </a>
                 </li>
 
                 <li class="auto-blurr">
-                    <a href="#">
-                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
-                        <h3>Název projektu</h3>
+                    <a href="img/pistol-big.webp">
+                        <img src="img/pistol.webp" alt="A pink and brass steampunk ray gun" loading="lazy"/>
+                        <h3>The Persuasion Device</h3>
                     </a>
                 </li>
 
                 <li class="auto-blurr">
-                    <a href="#">
-                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
-                        <h3>Název projektu</h3>
+                    <a href="img/butterfly-big.webp">
+                        <img src="img/butterfly.webp" alt="A mechanical butterfly with pink brass wings and gears" loading="lazy"/>
+                        <h3>The Brass Butterfly</h3>
                     </a>
                 </li>
-                
+
                 <li class="auto-blurr">
-                    <a href="#">
-                        <img src="img/6230861.jpg"  alt="Náhled projektu ..." />
-                        <h3>Název projektu</h3>
+                    <a href="img/hat-trimmer-big.webp">
+                        <img src="img/han-trimmer.webp" alt="A steampunk woman wearing a mechanical hat with gears" loading="lazy"/>
+                        <h3>The Cognitive Hat</h3>
                     </a>
                 </li>
+
+                <li class="auto-blurr">
+                    <a href="img/time-machine-big.webp">
+                        <img src="img/time-machine.webp" alt="A pink steampunk time machine with a roman numeral clock" loading="lazy"/>
+                        <h3>The Tempus Engine</h3>
+                    </a>
+                </li>
+
+                <li class="auto-blurr">
+                    <a href="img/machine-big.webp">
+                        <img src="img/machine.webp" alt="A pink steampunk machine with gears and valves" loading="lazy"/>
+                        <h3>The Brass Emotion Amplifier</h3>
+                    </a>
+                </li>
+
             </ul>
         </section>
         <section id="contacts">
-            <h2 class="auto-show">Contact me</h2>
-            <form class="auto-show">
+            <h2 class="auto-show">Transmit a Message</h2>
+            <form class="auto-show" aria-label="Contact Form">
                 <div class="form-group">
-                    <label for="name">Jméno</label>
+                    <label for="name">Full Name</label>
                     <input id="name" type="text" name="name" />
                 </div>
 
                 <div class="form-group">
-                    <label for="email">E-mail</label>
+                    <label for="email">Electronic Address</label>
                     <input id="email" type="email" name="email" />
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Zpráva</label>
+                    <label for="message">Your Message</label>
                     <textarea id="message" name="message"></textarea>
                 </div>
 
-                <button class="submit" type="submit">Odeslat</button>
+                <button class="submit" type="submit">Submit</button>
             </form>
         </section>
     </main>
@@ -186,7 +208,7 @@
             </a>
         </div>
         <div class="info">
-            <p>Copyright Alena Pumprová 2026</p>
+            <p>© Alena Pumprová 2026 — The Workshop</p>
         </div>
     </footer>
     <script src="script.js"></script>
