@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Workshop</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rajdhani:wght@300;400;500;600;700&family=Smythe&display=swap" rel="stylesheet">
@@ -12,20 +12,22 @@
 <body>
     <header>
         <!-- Desktop Navigation -->
-        <nav label="Main navigation" class="desktop-nav">
+        <nav aria-label="Main navigation" class="desktop-nav">
             <img src="img/logo.webp" alt="logo" id="logo">
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
-                <li><a href="#about" id="scroll">About</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contacts">Contact</a></li>
             </ul>
         </nav>
 
         <!-- Mobile Navigation -->
-         <div class="burger-menu">
-            <button 
+        <div class="burger-menu">
+            <button
+                type="button"  
                 aria-label="Show menu" 
+                aria-expanded="false"
                 id="burger-toggle" 
                 class="toggle-button"
             >
@@ -47,7 +49,7 @@
             <nav class="mobile-nav">
                 <ul class="nav-links">
                     <li><a href="#hero">Home</a></li>
-                    <li><a href="#about" id="scroll">About</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contacts">Contact</a></li>
                 </ul>
@@ -61,7 +63,7 @@
                 <p>Welcome to my workshop. Mind the steam. And the gears. And whatever that thing in the corner is doing.</p>
                 <div class="cta-buttons">
                     <a href="#projects" class="primary">My Inventory</a>
-                    <a href="#contact" class="secondary">Write me</a>
+                    <a href="#contactS" class="secondary">Write me</a>
                 </div>
             </div>
             <a 
@@ -274,7 +276,7 @@
                     >
                         <img 
                             class="lightbox-image"
-                            src="img/han-trimmer.webp" 
+                            src="img/hat-trimmer.webp" 
                             width="550"
                             height="550"
                             alt="A steampunk woman wearing a mechanical hat with gears" 

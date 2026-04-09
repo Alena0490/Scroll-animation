@@ -24,24 +24,83 @@ const observer = new IntersectionObserver(
 
 sections.forEach(section => observer.observe(section));
 
-/****  BURGER MENU */
+/**** BURGER MENU */
 const burgerToggle = document.getElementById('burger-toggle');
 const burgerNav = document.querySelector('.mobile-nav');
 const burgerMenu = document.querySelector('.burger-menu');
 
-burgerToggle.addEventListener('click', () => {
-    const isOpen = burgerMenu.classList.toggle('is-open');
-    burgerNav.style.display = isOpen ? 'flex' : 'none';
-    burgerToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Show menu');
-});
+function openMenu() {
+    burgerMenu.classList.add('is-open');
+    burgerNav.classList.add('is-open');
+    burgerToggle.setAttribute('aria-label', 'Close menu');
+    burgerToggle.setAttribute('aria-expanded', 'true');
+
+    const firstLink = burgerNav.querySelector('a');
+    firstLink?.focus();
+}
+
+function closeMenu() {
+    burgerMenu.classList.remove('is-open');
+    burgerNav.classList.remove('is-open');
+    burgerToggle.setAttribute('aria-label', 'Show menu');
+    burgerToggle.setAttribute('aria-expanded', 'false');
+}
+
+function toggleMenu() {
+    if (burgerMenu.classList.contains('is-open')) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
+}
+
+burgerToggle.addEventListener('click', toggleMenu);
 
 // Close burger after clicking on link
 burgerNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        burgerMenu.classList.remove('is-open');
-        burgerNav.style.display = 'none';
-        burgerToggle.setAttribute('aria-label', 'Show menu');
-    });
+    link.addEventListener('click', closeMenu);
+});
+
+// Closing the menu with the Escape button
+document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (!burgerMenu.classList.contains('is-open')) return;
+
+    closeMenu();
+    burgerToggle.focus();
+});
+
+// Closing by clicking outside the menu
+document.addEventListener('click', (e) => {
+    if (!burgerMenu.classList.contains('is-open')) return;
+    if (burgerMenu.contains(e.target)) return;
+
+    closeMenu();
+});
+
+/*** Focus Trap */
+document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab') return;
+    if (!burgerMenu.classList.contains('is-open')) return;
+
+    const focusableElements = burgerMenu.querySelectorAll(
+        'button, a[href], [tabindex]:not([tabindex="-1"])'
+    );
+
+    if (!focusableElements.length) return;
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement.focus();
+    }
+
+    if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement.focus();
+    }
 });
 
 /** LIGHTBOX PHOTOGALLERY */
@@ -116,12 +175,14 @@ document.addEventListener("DOMContentLoaded", function () {
   
         closeBtn.addEventListener('click', hideLightbox);
         overlay.addEventListener('click', e => {
-          if (e.target === overlay) hideLightbox(); // Klik mimo obrázek zavře overlay
+          if (e.target === overlay) hideLightbox();
         });
         document.addEventListener('keydown', e => {
-          if (e.key === 'Escape') hideLightbox(); // Zavření klávesou Esc
-          if (e.key === 'ArrowRight') showNext(); // Šipka doprava
-          if (e.key === 'ArrowLeft') showPrev();  // Šipka doleva
+          if (!overlay || overlay.style.display !== 'flex') return;
+
+          if (e.key === 'Escape') hideLightbox();
+          if (e.key === 'ArrowRight') showNext();
+          if (e.key === 'ArrowLeft') showPrev();
         });
         leftBtn.addEventListener('click', showPrev);
         rightBtn.addEventListener('click', showNext);
