@@ -24,6 +24,26 @@ const observer = new IntersectionObserver(
 
 sections.forEach(section => observer.observe(section));
 
+/****  BURGER MENU */
+const burgerToggle = document.getElementById('burger-toggle');
+const burgerNav = document.querySelector('.mobile-nav');
+const burgerMenu = document.querySelector('.burger-menu');
+
+burgerToggle.addEventListener('click', () => {
+    const isOpen = burgerMenu.classList.toggle('is-open');
+    burgerNav.style.display = isOpen ? 'flex' : 'none';
+    burgerToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Show menu');
+});
+
+// Close burger after clicking on link
+burgerNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        burgerMenu.classList.remove('is-open');
+        burgerNav.style.display = 'none';
+        burgerToggle.setAttribute('aria-label', 'Show menu');
+    });
+});
+
 /** LIGHTBOX PHOTOGALLERY */
 document.addEventListener("DOMContentLoaded", function () {
     // Load all links with aria-label="lightbox"
