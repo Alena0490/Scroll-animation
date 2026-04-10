@@ -123,9 +123,19 @@
     /* Layout */
     --content-width: 950px;
     --header-height: 5.5rem;
+    
+    /* Spacing scale */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-7: 2rem;
+    --space-8: 2.5rem;
+    --space-9: 3rem;
+
     --section-spacing: 5rem;
-    --section-spacing-small: 3rem;
-    --gap: 1rem;
 
     /* Radius */
     --radius-sm: 0.25rem;
@@ -200,8 +210,8 @@ nav.desktop-nav {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 2rem;
-    padding: 0.75rem 2rem;
+    gap: var(--space-7);
+    padding: var(--space-3) var(--space-7);
 }
 
 .mobile-nav  {
@@ -212,7 +222,7 @@ nav.desktop-nav {
     display: none;
     width: 100%;
     position: relative;
-    height: 4rem;
+    height: var(--space-7);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--border-color);
 }
@@ -220,7 +230,7 @@ nav.desktop-nav {
 #burger-toggle {
     position: absolute;
     top: 50%;
-    right: 1rem;
+    right: var(--space-4);
     transform: translateY(-50%);
     width: var(--text-icon-lg);
     height: var(--text-icon-lg);
@@ -249,8 +259,8 @@ nav.desktop-nav {
     flex: 2;
     display: flex;
     justify-content: flex-end;
-    gap: 1rem;
-    padding: 0.25rem 1rem 0;
+    gap: var(--space-4);
+    padding: var(--space-1) var(--space-4) 0;
     list-style: none;
 }
 
@@ -279,7 +289,7 @@ nav.desktop-nav {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -4px;
+    bottom: calc(-1 * var(--space-1));
     width: 0;
     height: 2px;
     background: var(--main-color);
@@ -302,7 +312,7 @@ nav.desktop-nav {
     background-image: url(img/hero-image.webp);
     background-size: cover;
     background-position: top center;
-    padding: 2rem 1rem 3rem;
+    padding: var(--space-7) var(--space-4) var(--space-9);
     text-align: center;
 }
 
@@ -325,14 +335,14 @@ nav.desktop-nav {
      display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: var(--space-6);
     z-index: 2;
     max-width: 35rem;
 }
 
 #hero p {
     max-width: 42rem;
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-7);
     font-size: var(--text-h3);
     text-shadow: var(--shadow-sm);
 }
@@ -341,7 +351,7 @@ nav.desktop-nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: var(--space-4);
 }
 
 .cta-buttons button,
@@ -350,7 +360,7 @@ nav.desktop-nav {
     align-items: center;
     justify-content: center;
     min-height: 50px;
-    padding: 0.7rem 1.2rem;
+    padding: var(--space-3) var(--space-5);
     border-radius: var(--radius-sm);
     border: 1px solid var(--panel-stroke-soft);
     font-weight: 700;
@@ -431,7 +441,7 @@ nav.desktop-nav {
 
 .arrow-down {
     position: absolute;
-    bottom: 0.5rem;
+    bottom: var(--space-2);
     text-decoration: none;
     color: inherit;
     z-index: 10;
@@ -484,7 +494,7 @@ h1, h2 {
 h1 {
     color: var(--text-color);
     font-size: var(--text-h1);
-    margin: 1rem 1rem 1.5rem;
+    margin: var(--space-4) var(--space-4) var(--space-6);
     text-align: center;
     line-height: 1.1;
     text-shadow: var(--shadow-sm);
@@ -494,7 +504,7 @@ h2 {
     color: var(--main-color);
     text-align: center;
     font-size: var(--text-h2);
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-4);
 }
 
 h3 {
@@ -518,7 +528,7 @@ main {
 section {
     position: relative;
     width: 100%;
-    padding: var(--section-spacing) 2.5rem;
+    padding: var(--section-spacing) var(--space-8);
 }
 
 section:nth-of-type(even) {
@@ -534,8 +544,8 @@ section::before {
     content: "";
     position: absolute;
     top: 0;
-    left: 2rem;
-    right: 2rem;
+    left: var(--space-4);
+    right: var(--space-4);
     height: 2px;
     background:
         linear-gradient(
@@ -567,8 +577,8 @@ section p {
     width: 100%;
     max-width: 150px;
     height: auto;
-    margin: calc(-1 * var(--section-spacing-small)) auto 1rem;
-    transition: transform 0.8s linear;
+    margin: calc(-1 * var(--space-9)) auto var(--space-4);
+    transition: transform var(--transition-slow);
     filter: drop-shadow(var(--shadow-sm));
     cursor: pointer;
 }
@@ -579,7 +589,7 @@ section p {
 
 #about p {
     margin-inline: auto;
-    padding: 1.4rem 1.5rem;
+    padding: var(--space-6);
     border: 1px solid var(--panel-stroke-faint);
     border-radius: var(--radius-lg);
     background:
@@ -596,8 +606,8 @@ section p {
 .my-projects {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    padding: 2rem;
+    gap: var(--space-4);
+    padding: var(--space-7);
     border-radius: var(--radius-lg);
     background-color: var(--background-light);
 }
@@ -607,7 +617,7 @@ section p {
     position: relative;
     overflow: hidden;
     border: 1px solid var(--panel-stroke-soft);
-    border-radius: 0.35rem;
+    border-radius: var(--radius-md);
     background:
         linear-gradient(
             to bottom,
@@ -641,13 +651,13 @@ section p {
 
 .my-projects h3 {
     position: absolute;
-    left: 0.75rem;
-    right: 0.75rem;
-    bottom: 0.75rem;
+    left: var(--space-3);
+    bottom: var(--space-3);
+    right: var(--space-3);
     margin: 0;
-    padding: 0.55rem 0.7rem;
+    padding: var(--space-2) var(--space-3);
     border: 1px solid var(--panel-stroke-soft);
-    border-radius: 0.2rem;
+    border-radius: var(--radius-sm);
     background:
         linear-gradient(
             to bottom,
@@ -662,7 +672,7 @@ section p {
     font-size: 1.05rem;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    transition: opacity var(--transition-fast);
+    transition: opacity var(--transition-slow);
 }
 
 .my-projects li:hover h3 {
@@ -675,7 +685,7 @@ section p {
     height: auto;
     aspect-ratio: 4 / 5;
     object-fit: cover;
-    transition: transform var(--transition-medium), filter var(--transition-medium);
+    transition: transform var(--transition-slow), filter var(--transition-medium);
 }
 
 .my-projects li:hover img,
@@ -696,8 +706,8 @@ form {
     margin-inline: auto;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 2rem;
+    gap: var(--space-4);
+    padding: var(--space-7);
     border-radius: var(--radius-lg);
     background:
         linear-gradient(
@@ -716,9 +726,9 @@ form {
 form::before {
     content: "";
     position: absolute;
-    top: 0.85rem;
-    left: 1.25rem;
-    right: 1.25rem;
+    top: var(--space-3);
+    left: var(--space-5);
+    right: var(--space-5);
     height: 2px;
     background:
         linear-gradient(
@@ -739,7 +749,7 @@ form::before {
 form label {
     display: block;
     font-weight: 700;
-    margin-bottom: 0.45rem;
+    margin-bottom: var(--space-2);
     text-align: left;
     color: var(--label-color);
     text-transform: uppercase;
@@ -752,7 +762,7 @@ form input,
 form textarea {
     width: 100%;
     outline: none;
-    padding: 0.85rem 1rem;
+    padding: var(--space-3) var(--space-4);
     color: var(--text-color);
     border: 1px solid var(--input-border);
     border-radius: var(--radius-sm);
@@ -795,7 +805,7 @@ form textarea {
 .submit {
     width: 100%;
     min-height: 48px;
-    padding: 0.8rem 1rem;
+    padding: var(--space-3) var(--space-4);
     background:
         linear-gradient(
             to bottom,
@@ -841,8 +851,8 @@ footer {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem;
+    gap: var(--space-4);
+    padding: var(--space-4);
     background-color: var(--accent-dark-transparent);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -855,13 +865,13 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 1rem;
+    gap: var(--space-4);
 }
 
 .socials a {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: var(--space-1);
     text-shadow: var(--shadow-sm);
     text-decoration: none;
     color: var(--main-color);
@@ -882,6 +892,7 @@ footer {
 
 /*** LIGHTBOX PHOTOGALLERY */
 #lightbox-overlay {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -889,11 +900,9 @@ footer {
     height: 100%;
     background: rgba(0,0,0,0.9);
     backdrop-filter: blur(5px);
-    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    display: none;
 }
 
 #lightbox-overlay img {
@@ -905,10 +914,10 @@ footer {
 
 .lightbox-controls {
     position: absolute;
-    top: 1rem;
-    right: 2rem;
+    top: var(--space-4);
+    right: var(--space-7);
     display: flex;
-    gap: 3rem;
+    gap: var(--space-9);
     z-index: 10000;
 }
 
@@ -919,8 +928,8 @@ footer {
     border: none;
     color: var(--main-color);
     transition: 
-        transform 0.6s ease-in, 
-        color 0.6s linear;
+        transform var(--transition-slow), 
+        color var(--transition-slow);
     cursor: pointer;
     z-index: 700;
 
@@ -939,11 +948,11 @@ footer {
 }
 
 .arrow-left { 
-    left: 3rem; 
+    left: var(--space-9); 
 }
 
 .arrow-right {
-    right: 3rem; 
+    right: var(--space-9); 
 }
 
 .lightbox-button:hover, 
@@ -960,17 +969,27 @@ footer {
 
 .lightbox-caption {
     position: absolute;
-    bottom: 1rem;
+    bottom: var(--space-4);
     left: 50%;
     transform: translateX(-50%);
     color: var(--text-color);
     font-size: 1.2rem;
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 0.5rem 1rem;
+    padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-md);
     max-width: 38ch;
     text-align: center;
 }
+
+/*** 3D ANIMATIONS */
+#container3D {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 500;
+}
+
+
 
 @supports (animation-timeline: view()) {
     .auto-show {
@@ -978,8 +997,8 @@ footer {
         animation-timeline: view(70% 5%);
     }
 
-    .auto-blurr {
-        animation: AutoBulurrAnimation both;
+    .auto-blur {
+        animation: AutoBlurAnimation both;
         animation-timeline: view();
     }
 }
@@ -1009,13 +1028,14 @@ footer {
         top: 100%; 
         right: 0;
         width: fit-content;
-        position: absolute;
         opacity: 0;
-        padding: 0.5rem 2rem 1rem;
+        visibility: hidden;
+        pointer-events: none;
+        padding: var(--space-2) var(--space-7) var(--space-4);
         background-color: var(--background-light);
         backdrop-filter: blur(8px);
         border-bottom: 1px solid var(--border-color);
-        transform: translateY(-0.5rem);
+        transform: translateY(calc(-1 * var(--space-2)));
         transition:
             opacity var(--transition-fast),
             transform var(--transition-fast),
@@ -1078,7 +1098,7 @@ footer {
     }
 }
 
-@keyframes AutoBulurrAnimation {
+@keyframes AutoBlurAnimation {
     0% {
         filter: blur(20px);
     }
