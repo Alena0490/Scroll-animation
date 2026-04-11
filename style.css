@@ -1144,6 +1144,17 @@ footer {
         color: var(--accent-color);
     }
 
+     .lightbox-button:hover,
+    .arrow-left:hover, 
+    .arrow-right:hover, 
+    .lightbox-button:active,
+    .arrow-left:active, 
+    .arrow-right:active{
+        color: var(--accent-color);
+        filter: brightness(1.4)
+        drop-shadow(var(--shadow-sm));
+    }
+
     .arrow-right {
         right: var(--space-7);
     }

@@ -103,6 +103,12 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+/** 3D MODEL ANIMATION */
+window.addEventListener("load", async () => {
+  if (window.innerWidth < 1024) return;
+  await import("./three-animation.js");
+});
+
 /** LIGHTBOX PHOTOGALLERY */
 document.addEventListener("DOMContentLoaded", function () {
     // Load all links with aria-label="lightbox"
