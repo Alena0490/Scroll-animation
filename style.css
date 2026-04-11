@@ -993,7 +993,7 @@ footer {
 
 @supports (animation-timeline: view()) {
     .auto-show {
-        animation: AutoShowAnimation both;
+        animation: AutoShowAnimationMobile both;
         animation-timeline: view(70% 5%);
     }
 
@@ -1010,28 +1010,55 @@ footer {
 }
 
 @media (max-width: 648px){
-    nav.desktop-nav {
-        display: none;
+    header {
+        min-height: 4.5rem;
+    }
+
+    nav.desktop-nav { 
+        display: none; 
+    } 
+
+    .nav-links a::after {
+        bottom: 0;
     }
 
     .burger-menu {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        min-height: 4.5rem;
+        padding: 0 var(--space-4);
+        position: relative;
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border-color);
     }
 
-     #burger-toggle {
+    #burger-toggle {
         display: block;
+        position: static;
+        transform: none;
+        width: 3rem;
+        height: 3rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #burger-toggle svg {
+        width: 3rem;
+        height: 3rem;
     }
 
     .mobile-nav {
         display: flex;
         position: absolute;
-        top: 100%; 
+        top: 100%;
         right: 0;
-        width: fit-content;
+        width: min(18rem, 100%);
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        padding: var(--space-2) var(--space-7) var(--space-4);
+        padding: var(--space-4);
         background-color: var(--background-light);
         backdrop-filter: blur(8px);
         border-bottom: 1px solid var(--border-color);
@@ -1040,6 +1067,26 @@ footer {
             opacity var(--transition-fast),
             transform var(--transition-fast),
             visibility 0s linear var(--transition-fast);
+    }
+
+    .mobile-nav .nav-links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+        padding: 0;
+    }
+
+    .mobile-nav .nav-links li {
+        width: 100%;
+        list-style: none;
+    }
+
+    .mobile-nav .nav-links a {
+        display: block;
+        width: 100%;
+        padding: var(--space-3) 0;
+        font-size: var(--text-menu-small);
     }
 
     .mobile-nav.is-open {
@@ -1052,7 +1099,7 @@ footer {
             transform var(--transition-fast),
             visibility 0s linear 0s;
     }
-
+   
     #hero {
         background-position: center center;
     }
@@ -1065,6 +1112,17 @@ footer {
      #hero::before {
         background: rgba(0, 14, 17, 0.65);
     }
+
+    section {
+        padding: var(--section-spacing) var(--space-4);
+    }
+
+    @supports (animation-timeline: view()) {
+        .auto-show {
+            animation: AutoShowAnimationMobile both;
+            animation-timeline: view();
+            animation-range: entry 0% cover 20%;
+    }
     
     .my-projects {
         grid-template-columns: repeat(2, 1fr);
@@ -1073,10 +1131,36 @@ footer {
     form {
         max-width: 480px;}
     }
+}
 
 @media (max-width: 485px) {
+
+    .cta-buttons button, .cta-buttons a {
+        padding: var(--space-2) var(--space-4);
+    }
     .my-projects {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    form {
+        gap: var(--space-5);
+        padding: var(--space-6) var(--space-4);
+    }
+
+    form::before {
+        display: none;
+    }
+
+    form label {
+        margin-bottom: var(--space-1)
+    }
+    
+    .submit {
+        padding: var(--space-3) var(--space-3);
+    }
+
+    .socials {
+        gap: var(--space-3);
     }
 }
 
@@ -1090,6 +1174,18 @@ footer {
     from {
         opacity: 0;
         transform: translateY(50px) scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes AutoShowAnimationMobile {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.7);
     }
 
     to {
