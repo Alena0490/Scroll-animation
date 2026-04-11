@@ -121,7 +121,7 @@
     --line-height: 1.6;
 
     /* Layout */
-    --content-width: 950px;
+    --content-width: 1024px;
     --header-height: 5.5rem;
     
     /* Spacing scale */
@@ -667,7 +667,7 @@ section p {
     box-shadow:
         inset 0 1px 0 var(--panel-highlight-mid),
         inset 0 -1px 0 var(--panel-shadow-mid);
-    z-index: 1;
+    z-index: 0;
     color: var(--white);
     font-size: 1.05rem;
     text-transform: uppercase;
@@ -908,8 +908,9 @@ footer {
 #lightbox-overlay img {
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
-    height: 90%;
-    width: auto;
+    max-width: 90%;
+    max-height: 90%;
+    z-index: 3;
 }
 
 .lightbox-controls {
@@ -927,6 +928,7 @@ footer {
     background: none;
     border: none;
     color: var(--main-color);
+    filter: drop-shadow(var(--shadow-sm));
     transition: 
         transform var(--transition-slow), 
         color var(--transition-slow);
@@ -1106,6 +1108,7 @@ footer {
 
     .hero-content {
         text-align: center;
+        padding-block: var(--space-8);
     }
 
 
@@ -1126,6 +1129,27 @@ footer {
     
     .my-projects {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    #lightbox-overlay img {
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        width: 90%;
+        height: auto;
+    }
+
+    .lightbox-button,
+    .arrow-left, 
+    .arrow-right {
+        color: var(--accent-color);
+    }
+
+    .arrow-right {
+        right: var(--space-7);
+    }
+
+    .arrow-left {
+        left: var(--space-7);
     }
 
     form {
