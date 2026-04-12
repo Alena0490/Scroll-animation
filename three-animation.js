@@ -154,11 +154,14 @@ function initScene() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25));
     document.getElementById('container3D').appendChild(renderer.domElement);
 
+    const clock = new THREE.Clock();
+
     function animate() {
         requestAnimationFrame(animate);
         renderer.render(scene, camera);
+
         if (mixer) {
-            mixer.update(0.02);
+            mixer.update(clock.getDelta());
         }
     }
     animate();
