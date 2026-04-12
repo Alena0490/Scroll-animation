@@ -4,20 +4,31 @@ const navLinks = document.querySelectorAll('.nav-links a');
 
 const observer = new IntersectionObserver(
     (entries) => {
+        let currentSection = null;
+
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                navLinks.forEach(link => {
-                    link.classList.toggle(
-                        'active',
-                        link.getAttribute('href') === `#${id}`
-                    );
-                });
+                currentSection = entry.target;
             }
         });
+
+        if (currentSection) {
+            const id = currentSection.getAttribute('id');
+
+            navLinks.forEach(link => {
+                const isActive = link.getAttribute('href') === `#${id}`;
+                link.classList.toggle('active', isActive);
+
+                if (isActive) {
+                    link.setAttribute('aria-current', 'page');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+        };
     },
     {
-        rootMargin: '-40% 0px -55% 0px',
+        rootMargin: '-40% 0px -50% 0px',
         threshold: 0
     }
 );
@@ -44,6 +55,7 @@ function closeMenu() {
     burgerNav.classList.remove('is-open');
     burgerToggle.setAttribute('aria-label', 'Show menu');
     burgerToggle.setAttribute('aria-expanded', 'false');
+    burgerToggle.focus();
 }
 
 function toggleMenu() {
@@ -104,9 +116,18 @@ document.addEventListener('keydown', (e) => {
 });
 
 /** 3D MODEL ANIMATION */
-window.addEventListener("load", async () => {
-  if (window.innerWidth < 1024) return;
-  await import("./three-animation.js");
+window.addEventListener("load", () => {
+    if (window.innerWidth < 1024) return;
+
+    const startThree = async () => {
+        await import("./three-animation.js");
+    };
+
+    if ("requestIdleCallback" in window) {
+        requestIdleCallback(startThree, { timeout: 2000 });
+    } else {
+        setTimeout(startThree, 500);
+    }
 });
 
 /** LIGHTBOX PHOTOGALLERY */
@@ -147,6 +168,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Create overlay
         overlay = document.createElement('div');
         overlay.id = 'lightbox-overlay';
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-modal', 'true');
   
         // Create the img
         overlayImg = document.createElement('img');

@@ -182,6 +182,8 @@ footer {
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     max-width: var(--content-width);
     position: fixed;
@@ -196,6 +198,7 @@ header {
         );
     border: 1px solid var(--form-panel-border);
     border-top: none;
+    padding: var(--space-3) var(--space-7);
     box-shadow:
         inset 0 1px 0 var(--button-inner-highlight),
         inset 0 -1px 0 var(--panel-shadow-soft),
@@ -211,7 +214,6 @@ nav.desktop-nav {
     justify-content: space-between;
     align-items: flex-end;
     gap: var(--space-7);
-    padding: var(--space-3) var(--space-7);
 }
 
 .mobile-nav  {
@@ -223,8 +225,6 @@ nav.desktop-nav {
     width: 100%;
     position: relative;
     height: var(--space-7);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--border-color);
 }
 
 #burger-toggle {
@@ -249,8 +249,6 @@ nav.desktop-nav {
 .burger-menu.is-open .icon-close { display: block; }
 
 #logo {
-    width: 100%;
-    max-width: 100px;
     flex: 0 0 auto;
     filter: drop-shadow(var(--shadow-sm));
 }
@@ -468,7 +466,6 @@ nav.desktop-nav {
 
 form,
 .my-projects li,
-.mobile-nav,
 header,
 footer {
     box-shadow:
@@ -1014,6 +1011,7 @@ footer {
 @media (max-width: 648px){
     header {
         min-height: 4.5rem;
+         padding: var(--space-1) var(--space-5);
     }
 
     nav.desktop-nav { 
@@ -1029,10 +1027,8 @@ footer {
         align-items: center;
         justify-content: flex-end;
         min-height: 4.5rem;
-        padding: 0 var(--space-4);
+        padding:  0 0;
         position: relative;
-        backdrop-filter: blur(8px);
-        border-bottom: 1px solid var(--border-color);
     }
 
     #burger-toggle {
@@ -1062,9 +1058,12 @@ footer {
         pointer-events: none;
         padding: var(--space-4);
         background-color: var(--background-light);
+        box-shadow: 
+            inset 1px 2px 2px var(--form-shadow),
+            var(--shadow-sm);
         backdrop-filter: blur(8px);
         border-bottom: 1px solid var(--border-color);
-        transform: translateY(calc(-1 * var(--space-2)));
+        transform: translateY(calc(-1 * var(--space-4)));
         transition:
             opacity var(--transition-fast),
             transform var(--transition-fast),
@@ -1096,6 +1095,7 @@ footer {
         visibility: visible;
         pointer-events: auto;
         transform: translateY(0);
+        margin-top: 1px;
         transition:
             opacity var(--transition-fast),
             transform var(--transition-fast),
@@ -1151,7 +1151,7 @@ footer {
     .arrow-left:active, 
     .arrow-right:active{
         color: var(--accent-color);
-        filter: brightness(1.4)
+        filter: brightness(1.4),
         drop-shadow(var(--shadow-sm));
     }
 
