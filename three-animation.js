@@ -66,19 +66,20 @@ function initScene() {
             rotation: { x: 0, y: 1.6, z: 0 } 
         }, { 
             id: 'about', 
-            position: { x: -42, y: 25, z: 0 },
+            position: { x: -42, y: 10, z: 0 },
             rotation: { x: 0.5, y: 1.8, z: 0 } 
         }, { 
             id: 'projects', 
-            position: { x: 37, y: 37, z: 1 },
+            position: { x: 38, y: 20, z: 1 },
             rotation: { x: 0.3, y: 4.7, z: 0 } 
         }, { 
             id: 'contacts', 
-            position: { x: 47, y: 4, z: 2 },
+            position: { x: 47, y: 0, z: 2 },
             rotation: { x: 0, y: 4.8, z: 0 } 
         }        
     ];
 
+    /*** Scrolling - model movement */
     const modelMove = () => {
         const sections = document.querySelectorAll('#hero, #about, #projects, #contacts');
         let currentSection;
@@ -150,6 +151,7 @@ function initScene() {
         antialias: true 
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25));
     document.getElementById('container3D').appendChild(renderer.domElement);
 
     function animate() {

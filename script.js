@@ -124,9 +124,9 @@ window.addEventListener("load", () => {
     };
 
     if ("requestIdleCallback" in window) {
-        requestIdleCallback(startThree, { timeout: 2000 });
+        requestIdleCallback(startThree, { timeout: 2500 });
     } else {
-        setTimeout(startThree, 500);
+        setTimeout(startThree, 1000);
     }
 });
 
